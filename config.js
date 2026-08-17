@@ -1,0 +1,5 @@
+window.APP_CONFIG = {
+  TMDB_API_KEY: "",
+  SUPABASE_URL: "",
+  SUPABASE_ANON_KEY: ""
+};

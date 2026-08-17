@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b14">
+  <title>Mi lista | Películas & Series</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <p class="eyebrow">MI LISTA PERSONAL</p>
+    <h1>Películas & Series</h1>
+    <p class="subtitle">Buscá títulos, agregalos a tu lista y mantené todo sincronizado entre PC y celular.</p>
+  </div>
+  <div class="account">
+    <span id="userEmail">Sin iniciar sesión</span>
+    <button id="authBtn" class="ghost-btn">Iniciar sesión</button>
+  </div>
+</header>
+
+<main class="container">
+  <section id="authPanel" class="panel auth-panel hidden">
+    <div>
+      <p class="eyebrow">CUENTA</p>
+      <h2>Sincronizar mi lista</h2>
+      <p class="muted">Iniciá sesión para que tu lista quede guardada online y puedas verla desde otros dispositivos.</p>
+    </div>
+    <form id="authForm" class="auth-form">
+      <input id="email" type="email" placeholder="Tu correo" required>
+      <button class="primary-btn">Enviar enlace de acceso</button>
+    </form>
+    <p id="authMessage" class="muted"></p>
+  </section>
+
+  <section class="stats">
+    <article><span id="totalCount">0</span><small>Total</small></article>
+    <article><span id="pendingCount">0</span><small>Pendientes</small></article>
+    <article><span id="watchedCount">0</span><small>Vistas</small></article>
+    <article><span id="likedCount">0</span><small>Me gustaron</small></article>
+  </section>
+
+  <section class="panel">
+    <div class="panel-title">
+      <div>
+        <p class="eyebrow">AGREGAR</p>
+        <h2>Buscar en TMDB</h2>
+      </div>
+      <span class="tmdb-mini">TMDB</span>
+    </div>
+
+    <form id="searchForm" class="search-form">
+      <input id="tmdbSearch" type="search" placeholder="Ej.: Interstellar, Breaking Bad..." required>
+      <select id="searchType">
+        <option value="movie">Películas</option>
+        <option value="tv">Series</option>
+      </select>
+      <button class="primary-btn">Buscar</button>
+    </form>
+    <div id="searchResults" class="search-results"></div>
+  </section>
+
+  <section class="toolbar">
+    <div class="tabs">
+      <button class="tab active" data-type="all">Todo</button>
+      <button class="tab" data-type="movie">Películas</button>
+      <button class="tab" data-type="tv">Series</button>
+    </div>
+    <div class="filters">
+      <select id="statusFilter">
+        <option value="all">Todos los estados</option>
+        <option value="pending">Pendientes</option>
+        <option value="watched">Vistas</option>
+      </select>
+      <select id="ratingFilter">
+        <option value="all">Cualquier valoración</option>
+        <option value="liked">Me gustaron</option>
+        <option value="disliked">No me gustaron</option>
+        <option value="unrated">Sin valorar</option>
+      </select>
+      <input id="listSearch" type="search" placeholder="Buscar en mi lista...">
+    </div>
+  </section>
+
+  <section>
+    <div id="emptyState" class="empty-state">
+      <div class="empty-icon">🎬</div>
+      <h2>Tu lista está vacía</h2>
+      <p>Buscá una película o serie arriba y agregala.</p>
+    </div>
+    <div id="mediaGrid" class="media-grid"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Los datos de títulos, posters y descripciones se obtienen de TMDB.</p>
+  <p class="tmdb-credit">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+</footer>
+
+<script src="config.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
