@@ -61,4 +61,3 @@ create policy "media_delete_own"
 on public.media
 for delete
 using (auth.uid() = user_id);
-```
